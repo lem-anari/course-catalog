@@ -5,8 +5,8 @@ html, body{
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 16px;
+    user-select: none;
 }
-
 form{
     max-width: 34.7%;
     height: 81.7vh;
@@ -16,7 +16,6 @@ form{
     position: absolute;
     left: 32.65%;
     top: 9%;
-    /* transition: 1s; */
 }
 h3{
     font-size: 32px;
@@ -54,32 +53,58 @@ hr{
 .check-action :last-child{
     color: #6B6B6B;
 }
+.check-action :last-child:hover{
+    color: #2c2b2b;
+    cursor: pointer;
+}
 .social-media{
     font-size: 13px;
     height: 60px;
     width: 100%;
-    /* border-width: 2px 0px 0px 0px;
-    border-color: green;
-    border-style: solid; */
+    padding: 32px 20px;
+    box-sizing: border-box;
 }
 .block-form{
     padding: 0 32px;
     box-sizing: border-box;
 }
-/* .social-media :first-child{
-    /* верхняя граница — 2px, правая — 3px, нижняя — 4px, левая — 5px: 
-    
-} */
 .icons{
-    width: 100px;
+    width: 107%;
     margin-top: -20px;
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    /* justify-content: space-between; */
+}
+.icons .circle{
+    width: 36px;
+    height: 36px;
+    background: white;
+    border-radius: 50%;
+    margin-top: -4px;
+    margin-right: 5px;
+    padding: 8px 8px;
+    box-sizing: border-box;
+    transition: .2s;
+}
+.icons .circle:hover{
+    box-shadow: 0px 4px 4px rgba(51, 51, 51, 0.04), 0px 4px 16px rgba(51, 51, 51, 0.08); 
+    cursor: pointer;
+}
+.icons .circle:first-child{
+    margin-top: -4px;
+    margin-right: 5px;
+    padding: 9px 8px;
+}
+.icons .circle:nth-child(2){
+    padding: 9px 13px;
+}
+.icons .circle:nth-child(3){
+    padding: 6px 6px;
 }
 input{
     border-radius: 4px;
+    outline: none;
+    color: var(--main-color);
 }
 .type-input, #checkbox{
     margin-top: 20px;
@@ -87,9 +112,12 @@ input{
 #checkbox{
     width: 24px;
     height: 24px;
+    margin-right: 10px;
+}
+.agreement-container label{
+    margin-top: 20px;
 }
 .type-input{
-    /* background: #FFFFFF;*/
     border: none;
     box-shadow: 0px 4px 4px rgba(51, 51, 51, 0.04), 0px 4px 16px rgba(51, 51, 51, 0.08); 
     height: 56px;
@@ -105,8 +133,8 @@ input{
     background: var(--main-color);
     height: 44px;
     color: white;
-    margin-top: 32px;
-    margin-bottom: 18px;
+    margin-top: 28px;
+    margin-bottom: 9px;
     cursor: pointer;
 }
 .btn-reg:hover{
@@ -129,7 +157,10 @@ input{
 #text_color{
     color: var(--main-color);
 }
-
+#text_color:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
 @media (max-width: 420px) and (min-width: 200px){
     form{
         max-width: 80%;
@@ -142,9 +173,68 @@ input{
         height: 34px;
     }
     .btn-reg{
+        margin-top: 24px;
         height: 34px;
     }
     *{
         font-size: 12px;
+    }
+    .icons{
+        margin-top: 10px;
+        justify-content: space-between;
+    }
+    .social-media {
+        height: 80px;
+    }
+    #checkbox{
+        width: 14px;
+        height: 14px;
+        margin-right: 5px;
+    }
+}
+
+
+@media (max-width: 780px) and (min-width: 421px){
+    form{
+        max-width: 90%;
+        height: 60vh;
+        left: 20%;
+    }
+    h3{
+        font-size: 30px;
+    }
+    *{
+        font-size: 18px;
+    }
+    .icons .circle:nth-child(2){
+        padding: 12px 15px;
+    }
+    .icons .circle:nth-child(3){
+        padding: 12px 12px;
+    }
+}
+
+@media (max-width: 1100px) and (min-width: 781px){
+    form{
+        max-width: 100%;
+        height: 55vh;
+        left: 20%;
+    }
+    *{
+        font-size: 24px;
+    }
+    .icons .circle:nth-child(2){
+        padding: 12px 15px;
+    }
+    .icons .circle:nth-child(3){
+        padding: 14px 14px;
+    }
+    .type-input{
+        height: 56px;
+        margin-top: 40px;
+    }
+    .btn-reg{
+        margin-top: 40px;
+        height: 60px;
     }
 }
